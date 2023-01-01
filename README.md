@@ -61,3 +61,36 @@ terraform plan -destroy
 terraform destroy
 terraform show
 ```
+
+### Exercise_1
+Q. Print you name in terraform.
+
+A.
+
+<ins>myname_file.txt</ins>
+```
+My name is Sumit Das.
+Dark Lord of DevOps.
+```
+
+<ins>output.tf</ins>
+```
+data "local_file" "myname_data" {
+  filename = "${path.module}/myname_file.txt"
+}
+
+output "myname_data-output" {
+  value = data.local_file.myname_data.content
+}
+```
+
+> Run the commands:
+
+```
+terraform init
+terraform fmt
+terraform validate
+terraform apply -auto-approve
+terraform show
+terraform plan
+```
