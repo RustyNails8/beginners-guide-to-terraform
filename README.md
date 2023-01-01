@@ -35,3 +35,29 @@ output "data_file_content" {
   value = data.local_file.data_file.content
 }
 ```
+
+### Section 1.6 : Terraform Destroy
+
+This is life cycle of teraform commands:
+
+![](images/TerraformCycleOverview.jpg)
+
+Created a local file resource and destroy it.
+
+```
+resource "local_file" "hello_destroy_file" {
+  content  = "Hello terraform destroy!"
+  filename = "${path.module}/hello_destroy.txt"
+}
+```
+
+```
+terraform init
+terraform fmt
+terraform validate
+terraform apply
+terraform show
+terraform plan -destroy
+terraform destroy
+terraform show
+```
