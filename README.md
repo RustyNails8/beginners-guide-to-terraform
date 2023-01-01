@@ -1,7 +1,7 @@
 # beginners-guide-to-terraform
 beginners-guide-to-terraform via Educative.io
 
-### Section 1.2: Terraform 101
+### Section 1.2 : Terraform 101
 What was done in this section:
 
 ```
@@ -19,4 +19,19 @@ terraform apply
 terraform apply -auto-approve
 terraform plan
 terraform destory
+```
+
+### Sectoin 1.5 : Terraform Module Output
+1. Create a data section and a file with no contents. --> Error
+2. Create a data section and a file with some contents. --> OK but no changes.
+3. Create a data section and output section and a file with some contents. --> OK and changes applied and shown.
+
+```
+data "local_file" "data_file" {
+  filename = "${path.module}/afile.txt"
+}
+
+output "data_file_content" {
+  value = data.local_file.data_file.content
+}
 ```
