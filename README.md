@@ -94,3 +94,12 @@ terraform apply -auto-approve
 terraform show
 terraform plan
 ```
+
+
+### Section 2.3 and 2.4 : Dependency
+Commands used:
+
+```
+terraform plan -destroy -target=aws_vpc.ltthw-vpc
+terraform plan -destroy -target=local_file.hello_local_file
+```
