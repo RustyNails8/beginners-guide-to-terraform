@@ -1,0 +1,22 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_subnet.ltthw_aws_vpc_subnet (expand)" [label = "aws_subnet.ltthw_aws_vpc_subnet", shape = "box"]
+		"[root] aws_vpc.ltthw_aws_vpc (expand)" [label = "aws_vpc.ltthw_aws_vpc", shape = "box"]
+		"[root] local_file.ltthw_local_file (expand)" [label = "local_file.ltthw_local_file", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"]" [label = "provider[\"registry.terraform.io/hashicorp/local\"]", shape = "diamond"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] aws_subnet.ltthw_aws_vpc_subnet (expand)" -> "[root] aws_vpc.ltthw_aws_vpc (expand)"
+		"[root] aws_vpc.ltthw_aws_vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] local_file.ltthw_local_file (expand)" -> "[root] aws_vpc.ltthw_aws_vpc (expand)"
+		"[root] local_file.ltthw_local_file (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.ltthw_aws_vpc_subnet (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] local_file.ltthw_local_file (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)"
+	}
+}
+

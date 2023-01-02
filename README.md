@@ -1,7 +1,9 @@
 # beginners-guide-to-terraform
+
 beginners-guide-to-terraform via Educative.io
 
 ### Section 1.2 : Terraform 101
+
 What was done in this section:
 
 ```
@@ -22,6 +24,7 @@ terraform destory
 ```
 
 ### Sectoin 1.5 : Terraform Module Output
+
 1. Create a data section and a file with no contents. --> Error
 2. Create a data section and a file with some contents. --> OK but no changes.
 3. Create a data section and output section and a file with some contents. --> OK and changes applied and shown.
@@ -63,17 +66,20 @@ terraform show
 ```
 
 ### Exercise_1
+
 Q. Print you name in terraform.
 
 A.
 
 <ins>myname_file.txt</ins>
+
 ```
 My name is Sumit Das.
 Dark Lord of DevOps.
 ```
 
 <ins>output.tf</ins>
+
 ```
 data "local_file" "myname_data" {
   filename = "${path.module}/myname_file.txt"
@@ -95,11 +101,23 @@ terraform show
 terraform plan
 ```
 
-
 ### Section 2.3 and 2.4 : Dependency
+
 Commands used:
 
 ```
 terraform plan -destroy -target=aws_vpc.ltthw-vpc
 terraform plan -destroy -target=local_file.hello_local_file
 ```
+### Section 2.5 : Graph
+
+```
+terraform graph
+terraform graph > graph.dot
+cat graph.dot
+cat graph.dot | dot -Tpng > graph.png
+```
+
+Graph is crated like this:
+
+![](images/TerraformGraph.jpg)
