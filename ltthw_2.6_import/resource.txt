@@ -1,0 +1,50 @@
+[0m# aws_subnet.ltthw_aws_vpc_subnet:
+resource "aws_subnet" "ltthw_aws_vpc_subnet" {
+    [1m[0marn[0m[0m                                            = "arn:aws:ec2:us-west-2:544077446993:subnet/subnet-068e290d3e886a0dd"
+    [1m[0massign_ipv6_address_on_creation[0m[0m                = false
+    [1m[0mavailability_zone[0m[0m                              = "us-west-2c"
+    [1m[0mavailability_zone_id[0m[0m                           = "usw2-az3"
+    [1m[0mcidr_block[0m[0m                                     = "10.0.0.0/16"
+    [1m[0menable_dns64[0m[0m                                   = false
+    [1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+    [1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+    [1m[0mid[0m[0m                                             = "subnet-068e290d3e886a0dd"
+    [1m[0mipv6_native[0m[0m                                    = false
+    [1m[0mmap_customer_owned_ip_on_launch[0m[0m                = false
+    [1m[0mmap_public_ip_on_launch[0m[0m                        = false
+    [1m[0mowner_id[0m[0m                                       = "544077446993"
+    [1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = "ip-name"
+    [1m[0mtags_all[0m[0m                                       = {}
+    [1m[0mvpc_id[0m[0m                                         = "vpc-01d63969b99497449"
+}
+
+# aws_vpc.ltthw_aws_vpc:
+resource "aws_vpc" "ltthw_aws_vpc" {
+    [1m[0marn[0m[0m                                  = "arn:aws:ec2:us-west-2:544077446993:vpc/vpc-01d63969b99497449"
+    [1m[0massign_generated_ipv6_cidr_block[0m[0m     = false
+    [1m[0mcidr_block[0m[0m                           = "10.0.0.0/16"
+    [1m[0mdefault_network_acl_id[0m[0m               = "acl-02ee18e530eba9709"
+    [1m[0mdefault_route_table_id[0m[0m               = "rtb-0e89cd8edcb661c3d"
+    [1m[0mdefault_security_group_id[0m[0m            = "sg-00fc3abddb8a162c2"
+    [1m[0mdhcp_options_id[0m[0m                      = "dopt-034bc620c892ab8f9"
+    [1m[0menable_classiclink[0m[0m                   = false
+    [1m[0menable_classiclink_dns_support[0m[0m       = false
+    [1m[0menable_dns_hostnames[0m[0m                 = false
+    [1m[0menable_dns_support[0m[0m                   = true
+    [1m[0menable_network_address_usage_metrics[0m[0m = false
+    [1m[0mid[0m[0m                                   = "vpc-01d63969b99497449"
+    [1m[0minstance_tenancy[0m[0m                     = "default"
+    [1m[0mipv6_netmask_length[0m[0m                  = 0
+    [1m[0mmain_route_table_id[0m[0m                  = "rtb-0e89cd8edcb661c3d"
+    [1m[0mowner_id[0m[0m                             = "544077446993"
+    [1m[0mtags_all[0m[0m                             = {}
+}
+
+# local_file.ltthw_local_file:
+resource "local_file" "ltthw_local_file" {
+    [1m[0mcontent[0m[0m              = "I am Sumit Das - Dark Lord of DevOps"
+    [1m[0mdirectory_permission[0m[0m = "0777"
+    [1m[0mfile_permission[0m[0m      = "0777"
+    [1m[0mfilename[0m[0m             = "./ltthw_local_file.txt"
+    [1m[0mid[0m[0m                   = "e8cea4e75db2344fc392495fcd320ecc5c25d8c8"
+}[0m[0m

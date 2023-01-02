@@ -121,3 +121,18 @@ cat graph.dot | dot -Tpng > graph.png
 Graph is crated like this:
 
 ![](images/TerraformGraph.jpg)
+
+### Section 2.6 : Import
+
+Commands Used:
+```
+terraform show > resources.txt
+rm terraform.tfstate terraform.state.backup
+terraform import aws_subnet.ltthw-vpc-subnet subnet-01c0aa6aac2b22023
+terraform state list
+terraform show 
+terraform import aws_vpc.ltthw-vpc vpc-13a5a768
+terraform state list
+terraform show
+terraform import local_file.hello_local_file hello_local.txt
+```
