@@ -136,3 +136,13 @@ terraform state list
 terraform show
 terraform import local_file.hello_local_file hello_local.txt
 ```
+
+### Section 3.2 : Modules
+
+Check the files in [ltthw_3.3_variable](ltthw_3.3_variable/variable_module_consumer/variable_module_consumer.tf)
+
+Takeaway Commands:
+
+```
+terraform apply -var 'myfilename=command_line_filename.txt' -auto-approve 
+```
