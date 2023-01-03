@@ -147,3 +147,13 @@ Takeaway Commands:
 ```
 terraform apply -var 'myfilename=command_line_filename.txt' -auto-approve 
 ```
+
+### Section 3.4 : Module Output
+
+How to access variable from another module :
+
+```
+output "consumer_content" {
+  value = module.hello.content
+}
+```
