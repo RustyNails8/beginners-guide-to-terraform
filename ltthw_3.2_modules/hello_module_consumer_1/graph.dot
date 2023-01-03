@@ -1,0 +1,15 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] module.hello_module_consumer_1.local_file.hello_local_file (expand)" [label = "module.hello_module_consumer_1.local_file.hello_local_file", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"]" [label = "provider[\"registry.terraform.io/hashicorp/local\"]", shape = "diamond"]
+		"[root] module.hello_module_consumer_1 (close)" -> "[root] module.hello_module_consumer_1.local_file.hello_local_file (expand)"
+		"[root] module.hello_module_consumer_1.local_file.hello_local_file (expand)" -> "[root] module.hello_module_consumer_1 (expand)"
+		"[root] module.hello_module_consumer_1.local_file.hello_local_file (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] module.hello_module_consumer_1.local_file.hello_local_file (expand)"
+		"[root] root" -> "[root] module.hello_module_consumer_1 (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)"
+	}
+}
+
