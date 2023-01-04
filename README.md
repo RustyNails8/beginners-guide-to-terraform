@@ -157,3 +157,11 @@ output "consumer_content" {
   value = module.hello.content
 }
 ```
+
+### Section 3.6 : Data Types : Collection Types
+
+Takeaway Commands:
+
+```
+ terraform apply -var-file="testing.tfvars"  -auto-approve
+```
