@@ -1,7 +1,6 @@
-output "myfilename" {
+output "filename" {
   value = var.filename
 }
-
-output "mycontent" {
+output "content" {
   value = var.content
 }
