@@ -165,3 +165,55 @@ Takeaway Commands:
 ```
  terraform apply -var-file="testing.tfvars"  -auto-approve
 ```
+
+References:
+1. [Data Types Hasicorp GitHub](https://github.com/hashicorp/terraform/blob/main/website/docs/language/expressions/types.mdx)
+2. [Types and Values Learn Terraform ](https://developer.hashicorp.com/terraform/language/expressions/types)
+
+Data Types:
+
+> If we don’t specify a type in our code for the collection and input the value on the command line while mixing types, Terraform will convert the values to a single type if it can, based on rules specified in the language.
+
+0. **Common Data Types** : 
+```
+a_number      = 2
+a_string      = "SD"
+a_boolean     = false
+```
+1. **List**     : The simplest of these is a list which looks similar to the list construct in other languages. ``` a_list        = [2, 1, 2] ```
+2. **Sets**     : Unlike lists, sets do not care about ordering and dropping any duplicates within the set. ``` a_string_set  = ["Hello", "Hello", "Goodbye"] ```
+3. **Maps**     : If we need to associate one variable with another, then maps are our friends. They allow us to map a string to a variable of a specifiable type. 
+
+```
+a_string_map  = { "1" : "Hello", "2" : "Goodbye" }
+a_number_map  = { "example1" : 2.2 }
+a_boolean_map = { "abc" : true }
+```
+
+4. **Objects**  : Complex types allow us to collect variables of different types into a single variable.
+
+```
+variable rectangle { 
+type = object({
+    length=number, 
+    width=number, 
+    description=string
+    }) 
+}
+```
+5. **Tuples**   : A tuple is like a list, but it specifies the type and length of the list directly.
+
+
+```
+variable a_tuple { 
+type = tuple([number,string]) 
+}
+```
+
+6. **Any**      : Instead of specifying a type, we can use the any keyword to instruct Terraform to take the type of the first value it sees for the variable.
+
+```
+variable a_tuple_with_any { 
+type = tuple([any,string]) 
+}
+```
