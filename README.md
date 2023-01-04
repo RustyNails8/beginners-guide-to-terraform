@@ -217,3 +217,10 @@ variable a_tuple_with_any {
 type = tuple([any,string]) 
 }
 ```
+
+### Section 4:
+
+The null resource is a resource that explicitly does not create anything.
+The provisioners set up resources upon creation or change.
+The triggers allow the user to exercise some control over when provisioners are run.
+

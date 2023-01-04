@@ -1,0 +1,5 @@
+total 6
+-rwxrwx---+ 1 IN10C2 Domain Users 180 Jan  4 20:16 terraform.tfstate.backup
+-rwxrwx---+ 1 IN10C2 Domain Users 587 Jan  4 20:16 terraform.tfstate
+-rwxrwx---+ 1 IN10C2 Domain Users 607 Jan  4 20:18 main.tf
+-rwxrwx---+ 1 IN10C2 Domain Users   0 Jan  4 20:19 afile.txt
