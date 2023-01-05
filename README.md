@@ -218,9 +218,20 @@ type = tuple([any,string])
 }
 ```
 
-### Section 4:
+### Section 4.1 : Null, Provisioners, Triggers
 
 The null resource is a resource that explicitly does not create anything.
 The provisioners set up resources upon creation or change.
 The triggers allow the user to exercise some control over when provisioners are run.
 
+### Section 4.2 : Multiple resources
+
+#### Count
+The count meta-argument looks like a simple variable, but it has a significant effect on the Terraform code. A meta-argument is a value that tells Terraform about the resources being created rather than the details of the resources themselves.
+
+As you have probably guessed, setting count creates that number of resources. Remember that Terraform is declarative, but if we think in terms of iterative code, then this turns the code into something like a for loop. In this for loop, count.index can be used to refer to which iteration we’re currently on.
+
+Also seen above is the format function, which allows us to format strings. If you want to learn more about it, look up the Terraform format function. In this case, the subnet for the cidr_block value for each of the three AWS VPCs created is provided.
+
+#### For-each
+The for_each can take either a set of strings or a map. If it’s a map, we can use the each.key reference to refer to the key of each item of the map in turn, or each.value to refer to each item’s value.
