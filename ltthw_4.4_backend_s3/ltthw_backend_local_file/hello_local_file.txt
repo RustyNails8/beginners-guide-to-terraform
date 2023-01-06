@@ -1,0 +1,1 @@
+Hello terraform REMOTE backend from module_1!

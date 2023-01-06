@@ -1,0 +1,3 @@
+variable "BUCKET_NAME" {
+  default = ltthw-893a587da8e9042af7e1866674711453
+}
