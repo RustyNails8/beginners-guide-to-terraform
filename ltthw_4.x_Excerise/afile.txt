@@ -1,0 +1,5 @@
+total 5
+drwxrwx---+ 1 IN10C2 Domain Users   0 Jan  6 10:37 prov_trig
+-rwxrwx---+ 1 IN10C2 Domain Users 291 Jan  6 10:42 main.tf
+-rwxrwx---+ 1 IN10C2 Domain Users 666 Jan  6 10:42 terraform.tfstate
+-rwxrwx---+ 1 IN10C2 Domain Users   0 Jan  6 10:43 afile.txt
